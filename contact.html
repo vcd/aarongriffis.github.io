@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Aaron Griffis</title>
-    <!-- For RWD -->
+    <title>Contact Me</title>
+	<!-- For RWD -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Normalize -->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -11,22 +11,28 @@
 	<!-- Styles -->
 	<link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    
-    <nav>
+<body class="contact">
+   
+	<nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="bio.html">Bio &amp; Resume</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
 			<li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav>
-    
-    <h1>Aaron Griffis</h1>
-    
-    <img src="img/Profile.jpeg" alt="Profile">
-    
-    <p>I am a  senior undergraduate student majoring in Computer Science and minoring in Design at Eastern Washington University.</p>
+	</nav>
+	
+	<form action="https://formspree.io/aarongriffis@hotmail.com" method="POST">
+
+      <label for="name">Name</label>
+      <input type="text" name="name" />
+
+      <label for="email">Email</label>
+      <input type="text" name="email" />
+
+      <input type="submit" />
+
+    </form>
     
 </body>
 </html>
