@@ -1,34 +1,274 @@
-/* Your Awesome Styling*/
+/******************************
+  Color Palette:
+    Greens:
+      *Darkest*  #363F1A #797B5A #BDB69A  *Lightest*
+    Tans:
+      *Darkest*  #262114 #3F362C #7F7160 #BFAF9A #FFEEDA  *Lightest*
+******************************/
 
-/* Bio */
+
+/******************************
+  Global
+******************************/
+/* Border Box Sizing */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css?family=Carter+One|Montserrat');
+
+body {
+  margin-top: 100px;
+  background: #363F1A;
+  padding-top: 100px;
+  color: #7F7160;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.125em;
+  line-height:1.6;
+}
+
+.wrapper {
+  background: #FFEEDA;
+  background-blend-mode: multiply;
+  width: 80%;
+  margin: 0 auto 30px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/******************************
+  Headers
+******************************/
+/* Headers */
+h1, h2 {
+  color: #7F7160;
+  font-family: 'Carter One', sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.25em;
+}
+
+/******************************
+   Keyframe Animations
+******************************/
+
+@keyframes swivel {
+  0% {
+  transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(-1deg);
+  }
+  
+  75% {
+    transform: rotate(1deg);
+  }
+  
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes reverse_swivel {
+  0% {
+  transform: rotate(0deg);
+  }
+  
+  25% {
+    transform: rotate(1deg);
+  }
+  
+  75% {
+    transform: rotate(-1deg);
+  }
+  
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/******************************
+  Links
+******************************/
+/* Links */
+a:link, 
+a:visited {
+  color: #FFEEDA;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #BFAF9A;
+}
+
+/******************************
+   Main Navigation
+******************************/
+header {
+  background: #7F7160;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .25);
+  z-index: 1000;
+}
+
+header #name {
+  color: #FFEEDA;
+  font-family: 'Carter One', sans-serif;
+  font-size: 4em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+header #name:hover {
+  color: #BFAF9A;
+}
+
+header h1, img, nav {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+header img {
+  background: #FFEEDA;
+  border: 10px solid #363F1A;
+  border-radius: 50%;
+  transition: background .3s;
+}
+
+header img:hover {
+  background: #BFAF9A;
+}
+
+header li {
+  list-style: none;
+}
+
+/******************************
+   Footer
+******************************/
+footer {
+  text-align: center;
+  color: #797B5A;
+  background: #363F1A;
+  padding: 20px;
+}
+
+footer p {
+  margin: 0;
+}
+
+/******************************
+   Homepage
+******************************/
+.home {
+  background-image: url("../img/Overlay_Trees.png"),
+                    url("../img/Deer_Logo.png"),
+                    url("../img/Distant_trees.png"), 
+                    linear-gradient(#FFEEDA 300px, #797B5A 300px, #797B5A 1200px, #363F1A 1200px);
+  background-attachment: scroll, fixed, scroll;
+  background-repeat: repeat-x, no-repeat, repeat-x;
+  background-position: center 450px, 
+                       center 200px, 
+                       center 300px, 
+                       center top;
+}
+
+.home .wrapper {
+  margin: 1000px auto 0;
+}
+
+/******************************
+   Bio
+******************************/
 .bio #bio {
-    background: gray;
-    display: flex;
-    justify-content: space-between;
+  
 }
 
 .bio #bio section {
-    margin: 0 10px;
-    width: 50%;
+  margin: 0 10px;
+  width: 50%;
 }
 
 .bio #bio section:nth-child(1) {
     width: 400px;
 }
 
-/* Resume */
+/******************************
+   Resume
+******************************/
 .bio #resume {
-    background: orange;
-    display: flex;
-    flex-flow: wrap row;
+  
 }
 
 .bio #resume section {
-    flex: 1 25%;
     
 }
 
-/* Form */
+/******************************
+   Portfolio
+******************************/
+.portfolio figure {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, .3);
+  display: inline-block;
+  margin: 20px;
+  position: relative;
+  max-width: 550px;
+  
+  transform-origin: 50% 25px;
+}
+
+.portfolio figure:hover {
+  animation: swivel .5s;
+  animation-timing-function: ease-in-out;
+}
+
+.portfolio figure:hover .pin {
+  animation: reverse_swivel .5s;
+  animation-timing-function: ease-in-out;
+}
+
+.portfolio .pin {
+  background-image: url("../img/push-pin.svg");
+  width: 100px;
+  height: 100px;
+  top: -25px;
+  left: 50%;
+  margin-left: -50px;
+  position: absolute;
+}
+
+.portfolio figure a {
+  float: left;
+  margin: 10px;
+}
+
+.portfolio figure img {
+  border-radius: 5px;
+}
+
+.portfolio figcaption h2, p {
+  margin: 0;
+}
+
+/******************************
+   Contact
+******************************/
 .contact {
     
 }
@@ -42,11 +282,14 @@ input[type="submit"] {
     border: none;
 }
 
+/******************************
+   Media Queries
+******************************/
 /* Mobile: 320px = 20em */
 @media screen and (min-width: 20em) { 
-
+  
   /* Diagnostic Styling. Delete When Done. */
-  body:before {
+  .wrapper:before {
        background: yellow;
        content: "Mobile Size";
   }
@@ -57,7 +300,7 @@ input[type="submit"] {
 @media screen and (min-width: 48em)  {
 
   /* Diagnostic Styling. Delete When Done. */
-  body:before {
+  .wrapper:before {
        background: yellow;
        content: "Tablet Size";
   }
@@ -66,9 +309,9 @@ input[type="submit"] {
 
 /* Desktop: 1280px = 80em */
 @media screen and (min-width: 80em) { 
-  
+
   /* Diagnostic Styling. Delete When Done. */
-  body:before {
+  .wrapper:before {
        background: yellow;
        content: "Desktop Size";
   }
