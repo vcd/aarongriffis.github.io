@@ -13,83 +13,121 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
-<body class="portfolio">
+<body class="portfolio texture">
   <header>
     <nav>
       <ul>
-        <li><a href="index.html">Aaron Griffis</a></li>
+        <li id="name"><a href="index.html">Aaron Griffis</a></li>
         <li><a href="bio.html">Bio &amp; Resume</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="portfolio.html" id="current">Portfolio</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
   
-  <div class="wrapper">
-    <figure>
-      <div class="pin"></div>
-      <a href="#">
-        <div class="aspect">
-          <img src="http://placehold.it/200x200" alt="Thumbnail" />
-        </div>
-        <figcaption>
-          <h2>Really Really Really Really Long Title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ex dicta modi aspernatur ipsa ea ullam a eum iste eos.</p>
-        </figcaption>
+  <!-- Seahorse Fullsize -->
+  <div class="overlay" id="seahorse">
+    <div class="container">
+      <h2>Seahorse Painting</h2>
+      <a href="">
+        <img src="img/portfolio/Seahorse.png" alt="Seahorse" />
       </a>
-    </figure>
-    
-    <figure>
-      <div class="pin"></div>
-      <a href="#">
-        <div class="aspect">
-          <img src="http://placehold.it/200x200" alt="Thumbnail" />
-        </div>
-        <figcaption>
-          <h2>Shorter Title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-        </figcaption>
+      <p>A painting of a seahorse. Acrylic paint on a 5"x7" canvas</p>
+    </div>
+  </div>
+  
+  <!-- Knit Hat Fullsize -->
+  <div class="overlay" id="knit-hat">
+    <div class="container">
+      <h2>Hand-Knit Beanie</h2>
+      <a href="">
+        <img src="img/portfolio/Knit.png" alt="Knit Beanie" />
       </a>
-    </figure>
-    
-    <figure>
-      <div class="pin"></div>
-      <a href="#">
-        <div class="aspect">
-          <img src="http://placehold.it/200x200" alt="Thumbnail" />
-        </div>
-        <figcaption>
-          <h2>Title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ex dicta modi aspernatur ipsa ea ullam a eum iste eos, illo amet alias minus quo, corporis similique dolorem, quas! Eos.</p>
-        </figcaption>
+      <p>A cabled beanie that I knit for a friend</p>
+    </div>
+  </div>
+  
+  <!-- Preflight Fullsize -->
+  <div class="overlay" id="preflight">
+    <div class="container">
+      <h2>Spokane Preflight Poster</h2>
+      <a href="">
+        <img src="img/portfolio/Preflight.png" alt="Preflight Poster" />
       </a>
-    </figure>
-    
-    <figure>
-      <div class="pin"></div>
-      <a href="#">
-        <div class="aspect">
-          <img src="http://placehold.it/200x200" alt="Thumbnail" />
-        </div>
-        <figcaption>
-          <h2>Another Title</h2>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </figcaption>
+      <p>My submission for the Preflight design competition</p>
+    </div>
+  </div>
+  
+  <!-- SignalBox Fullsize -->
+  <div class="overlay" id="signalbox">
+    <div class="container">
+      <h2>Spokane Signal Box</h2>
+      <a href="">
+        <img src="img/portfolio/SignalBox.png" alt="Spokane Signal Box" />
       </a>
-    </figure>
-    
-    <figure>
-      <div class="pin"></div>
-      <a href="#">
-        <div class="aspect">
-          <img src="http://placehold.it/200x200" alt="Thumbnail" />
-        </div>
-        <figcaption>
-          <h2>Title</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ex dicta modi aspernatur ipsa ea ullam a eum iste eos, illo amet alias minus quo.</p>
-        </figcaption>
+      <p>My submission for Spokane's signal box design contest</p>
+    </div>
+  </div>
+  
+  <!-- Fireplace Fullsize -->
+  <div class="overlay" id="fireplace">
+    <div class="container">
+      <h2>Cardboard Fireplace</h2>
+      <a href="">
+        <img src="img/portfolio/Fireplace.png" alt="Cardboard Fireplace" />
       </a>
-    </figure>
+      <p>My cardboard fireplace. 'Nuff said.</p>
+    </div>
+  </div>
+  
+  <div class="wrapper texture">
+    <p>Here's a small selection of the creative projects I have completed in the last couple of years</p>
+    <div class="gallery">
+      <!--  Seahorse Thumbnail  -->
+      <div class="polaroid">
+        <div class="pin"></div>
+        <a href="#seahorse" class="thumb">
+          <img src="img/portfolio/Seahorse_Thumb.png" alt="Seahorse Thumbnail" />
+          <h2>Seahorse Painting</h2>
+        </a>
+      </div>
+      
+      <!--  Knit Thumbnail  -->
+      <div class="polaroid">
+        <div class="pin"></div>
+        <a href="#knit-hat" class="thumb">
+          <img src="img/portfolio/Knit_Thumb.png" alt="Knit Beanie Thumbnail" />
+          <h2>Hand-Knit Beanie</h2>
+        </a>
+      </div>
+      
+      <!--  Preflight Thumbnail  -->
+      <div class="polaroid">
+        <div class="pin"></div>
+        <a href="#preflight" class="thumb">
+          <img src="img/portfolio/Preflight_Thumb.png" alt="Preflight Poster" />
+          <h2>Preflight Poster</h2>
+        </a>
+      </div>
+      
+      <!--  SignalBox Thumbnail  -->
+      <div class="polaroid">
+        <div class="pin"></div>
+        <a href="#signalbox" class="thumb">
+          <img src="img/portfolio/SignalBox_Thumb.png" alt="Spokane Signal Box Thumbnail" />
+          <h2>Spokane Signal Box</h2>
+        </a>
+      </div>
+      
+      <!--  Fireplace Thumbnail  -->
+      <div class="polaroid">
+        <div class="pin"></div>
+        <a href="#fireplace" class="thumb">
+          <img src="img/portfolio/Fireplace_Thumb.png" alt="Cardboard Fireplace" />
+          <h2>Cardboard Fireplace</h2>
+        </a>
+      </div>
+    </div>
     
   </div>
 
