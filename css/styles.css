@@ -15,6 +15,7 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+/*  outline: solid black;*/
 }
 
 /* Google Font */
@@ -112,16 +113,20 @@ a:visited {
 ul {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
   width: 100%;
-  padding: 0 10px;
-  margin: 0;
+  max-width: 1130px;
+  padding: 0px;
+  margin: 0 auto;
+  width: 92%;
 }
 
 li {
   display: inline-block;
   background: #363F1A;
   text-align: center;
-  margin: 0 10px;
+    margin-left: 10px;
 }
 
 /******************************
@@ -140,6 +145,10 @@ header a {
   padding: 10px;
 }
 
+header li:first-of-type a {
+  padding: 0;
+}
+
 header li:first-of-type {
   background: none;
   font-family: 'Carter One', sans-serif;
@@ -149,6 +158,7 @@ header li:first-of-type {
   text-shadow: 5px 5px 0 rgba(0, 0, 0, .25);
   box-shadow: none;
   width: 100%;
+  margin: 0;
   
   transition: text-shadow .4s;
 }
@@ -287,6 +297,7 @@ footer {
 
 .portfolio figcaption {
   flex: 1;
+  color: #7F7160;
 }
 
 .portfolio figcaption h2, p {
@@ -312,10 +323,11 @@ input[type="submit"] {
 /******************************
    Media Queries
 ******************************/
-/* Mobile: 320px = 20em */
-@media screen and (max-width: 48em) { 
+
+/* Mobile: below 512px = 32em */
+@media screen and (max-width: 32em) {
   body {
-    font-size: 1em;
+    font-size: .8em;
   }
   
   header ul {
@@ -323,34 +335,54 @@ input[type="submit"] {
   }
   
   header li:first-of-type {
-    margin: 0;
     font-size: 10vw;
   }
   
   header li {
-    margin: 0 0 10px 0;
+    margin-bottom: 10px;
+    margin-left: 0;
     width: 100%;
   }
   
   .wrapper {
     margin: 250px auto 0;
   }
+}
+
+/* Mobile: between 512px = 32em and 776px = 48.5em */
+@media screen and (min-width: 32em) and (max-width: 48.5em) { 
+  body {
+    font-size: 1em;
+  }
   
-  .portfolio .wrapper {
-    flex-wrap: nowrap;
-    flex-direction: column;
+  header ul {
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  
+  header li:first-of-type {
+    margin: 0;
+    font-size: 10vw;
+    flex: 0 1 100%;
+  }
+  
+  header li {
+    flex:1 0 auto;
+  }
+  
+  header li:nth-child(2) {
+    margin: 0;
   }
 }
 
-/* Tablet:  768px = 160em */
-@media screen and (min-width: 48em)  {
+/* Tablet:  776px = 48.5em */
+@media screen and (min-width: 48.5em)  {
   header li:first-of-type {
     font-size: 2em;
   }
 }
 
 /* Desktop: 1280px = 80em */
-
 @media screen and (min-width: 80em) { 
   header li:first-of-type {
     font-size: 3em;
