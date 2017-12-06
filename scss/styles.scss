@@ -1,4 +1,188 @@
-@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Carter+One|Comfortaa|Montserrat');
 
 @import "normalize";
 @import "lightgallery";
+
+$bg: hsl(43, 100%, 95%);
+$fg: hsl(80, 40%, 20%);
+
+$layers: 6;
+$treeCount: 20;
+
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background: $bg;
+   margin: 0;
+}
+
+header {
+   height: 90vh;
+   margin: 0;
+   position: relative;
+   overflow: hidden;
+   text-align: center;
+  
+   .terrain, #header-text {
+      display: block;
+      position: absolute;
+   }
+
+   .terrain {
+      bottom: 0;
+      fill: $fg;
+      max-width: 75vmin;
+      pointer-events: none;
+   }
+
+   .terrain.right {
+      right: 0;
+   }
+
+   #mountain {
+      max-width: unset;
+      min-height: 75vh;
+      top: 25vh;
+      left: 50%;
+      transform: translate(-50%);
+   }
+
+   #header-text {
+      top: 15vmin;
+      width: 100%;
+      text-align: center;
+      color: $fg;
+      font: 1rem 'Comfortaa', bold;
+      padding: 0 2rem;
+      visibility: hidden;
+
+      h1 {
+         margin-bottom: 0;
+      }
+
+      h3 {
+         margin-top: 0;
+      }
+
+      #header-btn {
+         background: $fg;
+         color: $bg;
+         border: none;
+         border-radius: 5rem;
+         padding: 1rem 2rem;
+         cursor: pointer;
+         font: 1rem 'Comfortaa', bold;
+         outline: none;
+         transition: background 0.2s ease-in-out;
+      }
+
+      #header-arrow {
+         display: block;
+         margin: 0 auto;
+         fill: none;
+         stroke: $bg;
+         stroke-linecap: round;
+         stroke-linejoin: round;
+         stroke-width: 0.5px;
+         width: 2rem;
+         cursor: pointer;
+
+         path:first-of-type {
+            fill: $fg;
+            stroke: none;
+            transition: fill 0.2s ease-in-out;
+         }
+      }
+      
+      #header-btn.hover {
+         background: lighten($fg, 5%);
+      }
+      
+      #header-arrow path:first-of-type.hover {
+         fill: lighten($fg, 5%);
+      }
+   }
+}
+
+@media (min-width: 375px) and (min-height: 375px) {
+   header #header-text, header #header-text #header-btn {
+      font-size: 3vmin;
+   }
+
+   header #header-text #header-btn {
+      padding: 2vmin 4vmin;
+   }
+   
+   header #header-text #header-arrow {
+      width: 8vmin;
+   }
+}
+
+@media (min-width: 768px) and (min-height: 768px) {
+   header #header-text, header #header-text #header-btn {
+      font-size: 1.5rem;
+   }
+
+   header #header-text #header-arrow {
+      width: 4rem;
+   }
+}
+
+.tree {
+   fill: none;
+   stroke-linecap: round;
+   stroke-linejoin: round;
+   stroke-width: 1.2px;
+   pointer-events: none;
+
+   display: block;
+   position: absolute;
+   bottom: -5px;
+
+   path:not(.trunk) {
+      pointer-events: none;
+   }
+}
+
+.tree path {
+   pointer-events: visibleStroke;
+}
+
+@for $i from 1 through $layers {
+   $scale: round((($i - 1) / ($layers - 1)) * ($layers - 1));
+   $r: red($bg) + (((red($fg) - red($bg)) / $layers) * ($scale + 1));
+   $g: green($bg) + (((green($fg) - green($bg)) / $layers) * ($scale + 1));
+   $b: blue($bg) + (((blue($fg) - blue($bg)) / $layers) * ($scale + 1));
+      
+   .layer#{$i}>path {
+      fill: rgb($r, $g, $b);
+   }
+
+   .layer#{$i} .tree {
+      background: red;
+      stroke: rgb($r, $g, $b);
+      
+      .trunk {
+      fill: rgb($r, $g, $b);
+      }
+   }
+
+   @if ($i == 1) {
+      #header-logo:hover {
+         .fg {
+            fill: rgb($r, $g, $b);
+         }
+         
+         #logo-border {
+            stroke: rgb($r, $g, $b);
+         }
+      }
+   }
+}
+
+section {
+   background: $fg;
+   height: 100vh;
+}
