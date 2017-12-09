@@ -41,14 +41,6 @@ header {
       right: 0;
    }
 
-   #mountain {
-      max-width: unset;
-      min-height: 75vh;
-      top: 25vh;
-      left: 50%;
-      transform: translate(-50%);
-   }
-
    #header-text {
       top: 15vmin;
       width: 100%;
@@ -57,6 +49,11 @@ header {
       font: 1rem 'Comfortaa', bold;
       padding: 0 2rem;
       visibility: hidden;
+      pointer-events: none;
+
+      h1, h3 {
+         pointer-events: all;
+      }
 
       h1 {
          margin-bottom: 0;
@@ -70,38 +67,50 @@ header {
          background: $fg;
          color: $bg;
          border: none;
-         border-radius: 5rem;
-         padding: 1rem 2rem;
+         border-radius: 50rem;
+         height: 3rem;
+         padding: 0;
          cursor: pointer;
          font: 1rem 'Comfortaa', bold;
          outline: none;
+         pointer-events: all;
          transition: background 0.2s ease-in-out;
+
+         p {
+            display: inline-block;
+            white-space: nowrap;
+            margin: 0.25rem;
+            margin-left: 1rem;
+            line-height: 1.25rem;
+         }
       }
 
       #header-arrow {
-         display: block;
-         margin: 0 auto;
          fill: none;
-         stroke: $bg;
+         stroke: $fg;
          stroke-linecap: round;
          stroke-linejoin: round;
          stroke-width: 0.5px;
-         width: 2rem;
-         cursor: pointer;
+         float: right;
+         height: 3rem;
+         padding: 0.2rem;
 
-         path:first-of-type {
-            fill: $fg;
+         circle {
+            fill: $bg;
             stroke: none;
-            transition: fill 0.2s ease-in-out;
+         }
+
+         path {
+            transition: stroke 0.2s ease-in-out;
          }
       }
       
-      #header-btn.hover {
-         background: lighten($fg, 5%);
+      #header-btn:hover {
+         background: lighten($fg, 10%);
       }
       
-      #header-arrow path:first-of-type.hover {
-         fill: lighten($fg, 5%);
+      #header-btn:hover #header-arrow path {
+         stroke: lighten($fg, 10%);
       }
    }
 }
@@ -112,11 +121,18 @@ header {
    }
 
    header #header-text #header-btn {
-      padding: 2vmin 4vmin;
+      height: 10vmin;
    }
-   
+
+   header #header-text #header-btn p {
+      line-height: 4vmin;
+      margin: 1vmin;
+      margin-left: 4vmin;
+   }
+
    header #header-text #header-arrow {
-      width: 8vmin;
+      height: 10vmin;
+      padding: 1vmin;
    }
 }
 
@@ -124,9 +140,20 @@ header {
    header #header-text, header #header-text #header-btn {
       font-size: 1.5rem;
    }
+   
+   header #header-text #header-btn {
+      height: 5rem;
+   }
+
+   header #header-text #header-btn p {
+      line-height: 2rem;
+      margin: 0.5rem;
+      margin-left: 2rem;
+   }
 
    header #header-text #header-arrow {
-      width: 4rem;
+      height: 5rem;
+      padding: 0.5rem;
    }
 }
 
@@ -161,23 +188,10 @@ header {
    }
 
    .layer#{$i} .tree {
-      background: red;
       stroke: rgb($r, $g, $b);
       
       .trunk {
       fill: rgb($r, $g, $b);
-      }
-   }
-
-   @if ($i == 1) {
-      #header-logo:hover {
-         .fg {
-            fill: rgb($r, $g, $b);
-         }
-         
-         #logo-border {
-            stroke: rgb($r, $g, $b);
-         }
       }
    }
 }

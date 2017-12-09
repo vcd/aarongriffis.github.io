@@ -12,11 +12,6 @@
 <body class="home">
 
    <header>
-
-      <svg xmlns="http://www.w3.org/2000/svg" class="terrain layer1" id="mountain" viewbox="0 -50 100 50" preserveAspectRatio="xMidYMin slice">
-         <path d="M0 50 l40 -40 q10 -10 20 0 l40 40z"/>
-      </svg>
-
       <svg xmlns="http://www.w3.org/2000/svg" class="terrain right layer1" viewbox="-50 0 50 50" preserveAspectRatio="xMinYMax">
          <path d="M50 0 l-35 50 h35z"/>
       </svg>
@@ -149,13 +144,15 @@
          <h3>and I enjoy making things</h3>
 
          <button id="header-btn">
-            Take a look at some of<br/>
-            the things I've made
+            <span>
+               <p>Take a look at some of<br/>the things I've made</p>
+               <svg xmlns="http://www.w3.org/2000/svg" id="header-arrow" viewbox="0 0 8 8">
+                  <circle cx="4" cy="4" r="4"/>
+                  <path d="m4 2.5 v3 m-1 -1 l1 1 l 1 -1"/>
+               </svg>
+            </span>
          </button>
-         <svg xmlns="http://www.w3.org/2000/svg" id="header-arrow" viewbox="0 2 6 8">
-            <path d="m0 0 v5 a3 3 0 0 0 6 0 v-5 z"/>
-            <path d="m3 3 v3 m-1 -1 l1 1 l 1 -1"/>
-         </svg>
+         
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" class="terrain right layer6" viewbox="-50 0 50 50" preserveAspectRatio="xMinYMax">
          <path d="M50 25 h-10 q-5 0 -5 5 v20 h15z" transform="rotate(-5)" transform-origin="top right"/>
@@ -271,7 +268,9 @@
       </svg>
    </header>
           
-   <section></section>
+   <section>
+
+   </section>
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

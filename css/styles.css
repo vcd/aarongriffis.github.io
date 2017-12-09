@@ -1318,14 +1318,6 @@ header .terrain.right {
   right: 0;
 }
 
-header #mountain {
-  max-width: unset;
-  min-height: 75vh;
-  top: 25vh;
-  left: 50%;
-  transform: translate(-50%);
-}
-
 header #header-text {
   top: 15vmin;
   width: 100%;
@@ -1334,6 +1326,11 @@ header #header-text {
   font: 1rem 'Comfortaa', bold;
   padding: 0 2rem;
   visibility: hidden;
+  pointer-events: none;
+}
+
+header #header-text h1, header #header-text h3 {
+  pointer-events: all;
 }
 
 header #header-text h1 {
@@ -1348,38 +1345,50 @@ header #header-text #header-btn {
   background: #3a471f;
   color: #fff8e6;
   border: none;
-  border-radius: 5rem;
-  padding: 1rem 2rem;
+  border-radius: 50rem;
+  height: 3rem;
+  padding: 0;
   cursor: pointer;
   font: 1rem 'Comfortaa', bold;
   outline: none;
+  pointer-events: all;
   transition: background 0.2s ease-in-out;
 }
 
+header #header-text #header-btn p {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0.25rem;
+  margin-left: 1rem;
+  line-height: 1.25rem;
+}
+
 header #header-text #header-arrow {
-  display: block;
-  margin: 0 auto;
   fill: none;
-  stroke: #fff8e6;
+  stroke: #3a471f;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 0.5px;
-  width: 2rem;
-  cursor: pointer;
+  float: right;
+  height: 3rem;
+  padding: 0.2rem;
 }
 
-header #header-text #header-arrow path:first-of-type {
-  fill: #3a471f;
+header #header-text #header-arrow circle {
+  fill: #fff8e6;
   stroke: none;
-  transition: fill 0.2s ease-in-out;
 }
 
-header #header-text #header-btn.hover {
-  background: #485926;
+header #header-text #header-arrow path {
+  transition: stroke 0.2s ease-in-out;
 }
 
-header #header-text #header-arrow path:first-of-type.hover {
-  fill: #485926;
+header #header-text #header-btn:hover {
+  background: #576b2e;
+}
+
+header #header-text #header-btn:hover #header-arrow path {
+  stroke: #576b2e;
 }
 
 @media (min-width: 375px) and (min-height: 375px) {
@@ -1387,10 +1396,16 @@ header #header-text #header-arrow path:first-of-type.hover {
     font-size: 3vmin;
   }
   header #header-text #header-btn {
-    padding: 2vmin 4vmin;
+    height: 10vmin;
+  }
+  header #header-text #header-btn p {
+    line-height: 4vmin;
+    margin: 1vmin;
+    margin-left: 4vmin;
   }
   header #header-text #header-arrow {
-    width: 8vmin;
+    height: 10vmin;
+    padding: 1vmin;
   }
 }
 
@@ -1398,8 +1413,17 @@ header #header-text #header-arrow path:first-of-type.hover {
   header #header-text, header #header-text #header-btn {
     font-size: 1.5rem;
   }
+  header #header-text #header-btn {
+    height: 5rem;
+  }
+  header #header-text #header-btn p {
+    line-height: 2rem;
+    margin: 0.5rem;
+    margin-left: 2rem;
+  }
   header #header-text #header-arrow {
-    width: 4rem;
+    height: 5rem;
+    padding: 0.5rem;
   }
 }
 
@@ -1427,7 +1451,6 @@ header #header-text #header-arrow path:first-of-type.hover {
 }
 
 .layer1 .tree {
-  background: red;
   stroke: #dedac4;
 }
 
@@ -1435,20 +1458,11 @@ header #header-text #header-arrow path:first-of-type.hover {
   fill: #dedac4;
 }
 
-#header-logo:hover .fg {
-  fill: #dedac4;
-}
-
-#header-logo:hover #logo-border {
-  stroke: #dedac4;
-}
-
 .layer2 > path {
   fill: #bdbda3;
 }
 
 .layer2 .tree {
-  background: red;
   stroke: #bdbda3;
 }
 
@@ -1461,7 +1475,6 @@ header #header-text #header-arrow path:first-of-type.hover {
 }
 
 .layer3 .tree {
-  background: red;
   stroke: #9ca082;
 }
 
@@ -1474,7 +1487,6 @@ header #header-text #header-arrow path:first-of-type.hover {
 }
 
 .layer4 .tree {
-  background: red;
   stroke: #7c8261;
 }
 
@@ -1487,7 +1499,6 @@ header #header-text #header-arrow path:first-of-type.hover {
 }
 
 .layer5 .tree {
-  background: red;
   stroke: #5b6540;
 }
 
@@ -1500,7 +1511,6 @@ header #header-text #header-arrow path:first-of-type.hover {
 }
 
 .layer6 .tree {
-  background: red;
   stroke: #3a471f;
 }
 

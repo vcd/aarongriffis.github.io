@@ -26,16 +26,12 @@ function loaded() {
   
    $('.tree .trunk').click(shakeTree).hover(shakeTree);
 
-   $('#header-btn, #header-arrow')
+   $('#header-btn')
       .click(function() {TweenMax.to(window, 2.5, {scrollTo:"section", ease:Power2.easeInOut}, '+=2');} )
-      .hover(function() {
-         $('#header-btn').addClass('hover');
-         $('#header-arrow path:first-of-type').addClass('hover');
-         TweenMax.to('#header-arrow', 0.5, {attr: {viewBox: '0 0 6 8'}, ease:Power2.easeInOut});
-      }, function() {
-         $('#header-btn').removeClass('hover');
-         $('#header-arrow path:first-of-type').removeClass('hover');
-         TweenMax.to('#header-arrow', 0.5, {attr: {viewBox: '0 2 6 8'}, ease:Power2.easeInOut});
+      .mouseenter(function() {
+         var anim = new TimelineLite();
+         anim.to('#header-arrow path', 0.2, {y:1, ease:Power2.easeIn})
+             .to('#header-arrow path', 1, {y:0, ease:Elastic.easeOut});
       });
 }
 
