@@ -27,7 +27,7 @@ function loaded() {
    $('.tree .trunk').click(shakeTree).hover(shakeTree);
 
    $('#header-btn')
-      .click(function() {TweenMax.to(window, 2.5, {scrollTo:"section", ease:Power2.easeInOut}, '+=2');} )
+      .click(function() {TweenMax.to(window, 2.5, {scrollTo:"#portfolio", ease:Power2.easeInOut}, '+=2');} )
       .mouseenter(function() {
          var anim = new TimelineLite();
          anim.to('#header-arrow path', 0.2, {y:1, ease:Power2.easeIn})
@@ -75,3 +75,20 @@ function shakeTree() {
      .add(TweenMax.staggerTo(leftBranches, 2, {rotation: 0, ease: Elastic.easeOut}, 0.03), .1)
      .add(TweenMax.staggerTo(rightBranches, 2, {rotation: 0, ease: Elastic.easeOut}, 0.03), .1);
 }
+
+// Activate Gallery
+$('#portfolio .grid').lightGallery({
+   selector: 'a',
+   thumbnail: true,
+	share: false,
+   download: false,
+   counter: false,
+   showThumbByDefault: false
+});
+
+//Masonry
+$('#portfolio .grid').masonry({
+   itemSelector: '.grid-item',
+   isFitWidth: true,
+   columnWidth: '.grid-sizer'
+ });

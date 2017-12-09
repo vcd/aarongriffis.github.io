@@ -1,0 +1,82 @@
+#portfolio {
+   background: $fg;
+   max-width: $masonrySize * $maxColumns;
+   margin: 10vh auto;
+}
+
+.grid {
+   margin: 0 auto;
+}
+
+.grid:after {
+   content: '';
+   display: block;
+   clear: both;
+}
+
+.grid-sizer, .grid-item {
+   width: $masonrySize;
+   height: $masonrySize;
+   float: left;
+
+   a {
+      display: inline-block;
+      position: relative;
+   }
+
+   img, #portfolio-description {
+      border: ($gutter / 6) solid $bg;
+      border-radius: ($gutter / 2);
+      padding: ($gutter / 6);
+      width: $masonrySize - ($gutter * 2);
+      height: $masonrySize - ($gutter * 2);
+      margin-left: $gutter;
+      margin-top: $gutter;
+   }
+
+   .title-overlay {
+      background: fade-out($fg, 0.2);
+      border-radius: ($gutter / 6);
+      margin: ($gutter * (4/3)) ($gutter / 3) ($gutter / 3) ($gutter * (4/3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      h3 {
+         color: $bg;
+         margin: 0;
+         font-size: $titleFontSize;
+         text-align: center;
+      }
+   }
+}
+
+.grid-item--width2{
+   width: ($masonrySize * 2);
+
+   img, #portfolio-description {
+      width: ($masonrySize * 2) - ($gutter * 2);
+   }
+}
+
+.grid-item--height2 {
+   height: ($masonrySize * 2);
+
+   img, #portfolio-description {
+      height: ($masonrySize * 2) - ($gutter * 2);
+   }
+}
+
+#portfolio-description section {
+   background: $bg;
+   color: $fg;
+   height: 100%;
+   width: 100%;
+   border-radius: ($gutter / 6);
+   padding: calc(1rem / 3) 1rem;
+}

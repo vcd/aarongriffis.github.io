@@ -24,7 +24,7 @@
 .lg-actions .lg-next, .lg-actions .lg-prev {
   background-color: rgba(0, 0, 0, 0.45);
   border-radius: 2px;
-  color: #999;
+  color: lighten($fg, 30%);
   cursor: pointer;
   display: block;
   font-size: 22px;
@@ -41,7 +41,7 @@
   opacity: 0.5;
 }
 .lg-actions .lg-next:hover, .lg-actions .lg-prev:hover {
-  color: #FFF;
+  color: $bg;
 }
 .lg-actions .lg-next {
   right: 20px;
@@ -166,7 +166,7 @@
   background-color: rgba(0, 0, 0, 0.45);
 }
 .lg-toolbar .lg-icon {
-  color: #999;
+  color: lighten($fg, 30%);
   cursor: pointer;
   float: right;
   font-size: 24px;
@@ -182,7 +182,7 @@
   transition: color 0.2s linear;
 }
 .lg-toolbar .lg-icon:hover {
-  color: #FFF;
+  color: $bg;
 }
 .lg-toolbar .lg-close:after {
   content: "\e070";
@@ -194,7 +194,7 @@
 .lg-sub-html {
   background-color: rgba(0, 0, 0, 0.45);
   bottom: 0;
-  color: #EEE;
+  color: lighten($fg, 30%);
   font-size: 16px;
   left: 0;
   padding: 10px 40px;
@@ -202,6 +202,9 @@
   right: 0;
   text-align: center;
   z-index: 1080;
+}
+.lg-sub-html h3 {
+   margin: 8px;
 }
 .lg-sub-html h4 {
   margin: 0;
@@ -325,7 +328,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 .lg-outer .lg-thumb-item.active, .lg-outer .lg-thumb-item:hover {
-  border-color: #a90707;
+  border-color: lighten($fg, 30%);
 }
 .lg-outer .lg-thumb-item img {
   width: 100%;
@@ -349,7 +352,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .lg-outer .lg-toogle-thumb {
   background-color: #0D0A0A;
   border-radius: 2px 2px 0 0;
-  color: #999;
+  color: lighten($fg, 30%);
   cursor: pointer;
   font-size: 24px;
   height: 39px;
@@ -365,7 +368,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   content: "\e1ff";
 }
 .lg-outer .lg-toogle-thumb:hover {
-  color: #FFF;
+  color: $bg;
 }
 
 .lg-outer .lg-video-cont {
@@ -870,9 +873,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   display: inline-block;
   vertical-align: middle;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 80vh;
   width: auto !important;
   height: auto !important;
+  border: ($gutter / 6) solid $bg;
+  border-radius: ($gutter / 2);
+  padding: ($gutter / 6);
 }
 .lg-outer.lg-show-after-load .lg-item .lg-object, .lg-outer.lg-show-after-load .lg-item .lg-video-play {
   opacity: 0;
